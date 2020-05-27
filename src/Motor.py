@@ -14,10 +14,21 @@ class Motor:
         self.port = port
         self.MOTOR_LOCK = False
 
+
+        """ 
+        pan forward: left 
+        pan reverse: right
+        tilt forward: up
+        tilt reverse: down
+        """
+
         self.pan = "pan"
         self.tilt = "tilt"
         self.forward = "forward"
         self.reverse = "reverse"
+
+
+
 
     def _move(self, motor, direction, steps):
         response = requests.get("http://{}:{}/motor_move/{}/{}/{}".format(self.host, self.port, motor, direction, steps))
