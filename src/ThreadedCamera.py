@@ -7,16 +7,17 @@ class ThreadedCamera(Thread):
     Works better.
     You get frames using grab_frame functions
     """
-    def __init__(self, source):
+    def __init__(self, source=0):
         super().__init__()
         
         self.capture = cv2.VideoCapture(source)
         self.daemon = True
+        self.status = False
+        self.frame = None
+
         self.start()
 
-        self.status = False
-        self.frame  = None
-        
+
     def run(self):
         print("Thread camera started.")
         while True:

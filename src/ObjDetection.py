@@ -3,11 +3,11 @@ import cv2
 
 class ObjDetection:
     """
-    
+    detect object in frame and return positions
     """
 
     def __init__(self, cascade_path):
-        print("Object detection has been initialized.")
+        print("\nObject detection has been initialized.")
         self.face_cascade = cv2.CascadeClassifier(cascade_path)
 
     def show_frame(self, frame):

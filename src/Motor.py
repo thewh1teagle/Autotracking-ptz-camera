@@ -39,6 +39,6 @@ class Motor:
     def motor_move(self, motor, direction, steps):
         if not self.MOTOR_LOCK:
             self.MOTOR_LOCK = True
-            print("Moving motor {}".format(motor))
+            print("Moving motor {} {} {} steps".format(motor, direction, steps))
             Thread(target=self._move, args=(motor, direction, steps)).start()
 
