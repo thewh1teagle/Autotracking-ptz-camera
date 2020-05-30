@@ -1,7 +1,7 @@
 from Motor import Motor
+from ObjDetection import ObjDetection
 
-
-class PtzAlgorithm(Motor):
+class PtzAlgorithm(Motor, ObjDetection):
     def __init__(self, host, motor_port, frame_dimensions):
         super().__init__(host, motor_port)
 
@@ -10,7 +10,7 @@ class PtzAlgorithm(Motor):
         self.frame_w, self.frame_h = frame_dimensions
         self.frame_x_center = self.frame_w // 2
         self.frame_y_center = self.frame_h // 2
-        self.steps = 1
+        self.steps = 4
 
     def decide(self, x, y, w, h):
 
