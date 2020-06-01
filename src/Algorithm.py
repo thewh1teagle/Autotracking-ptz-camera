@@ -2,6 +2,12 @@ from Motor import Motor
 from ObjDetection import ObjDetection
 
 class PtzAlgorithm(Motor, ObjDetection):
+
+    """
+    This class uses motor control and object detection to
+    track the face
+    """
+
     def __init__(self, host, motor_port, frame_dimensions):
         super().__init__(host, motor_port)
 
